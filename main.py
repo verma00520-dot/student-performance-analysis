@@ -108,3 +108,21 @@ plt.xlabel('Study Hours')
 plt.ylabel('Marks')
 plt.savefig('Graph3_Study_vs_Marks.png')
 plt.show()  # <-- show and wait
+print("\n========== TASK 4: CONCLUSION & REPORT ==========")
+print("Student Performance Analysis Report")
+print("-----------------------------------")
+print(f"1. Total Students Analyzed: {df.shape[0]}")
+print(f"2. Average Marks: {round(df['Marks'].mean(), 2)}")
+print(f"3. Average Study Hours: {round(df['StudyHours'].mean(), 2)}")
+print(f"4. Average Attendance: {round(df['Attendance'].mean(), 2)}%")
+
+pass_count = df[df['Marks'] >= 40].shape[0]
+fail_count = df[df['Marks'] < 40].shape[0]
+print(f"5. Pass Rate: {round(pass_count/df.shape[0]*100, 2)}%")
+print(f"6. Fail Rate: {round(fail_count/df.shape[0]*100, 2)}%")
+
+print("\nKey Insights:")
+print("- Students with 'High' attendance have higher average marks.")
+print("- StudyHours and Marks show a positive correlation.")
+print("- Most students are passing, indicating overall good performance.")
+print("-----------------------------------")
