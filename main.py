@@ -78,3 +78,33 @@ print(df.dtypes)
 # 5. Basic statistics
 print("\n4. Basic Statistics:")
 print(df.describe())
+print("\n========== TASK 3: VISUALIZATIONS ==========")
+import matplotlib.pyplot as plt
+print("My columns are:", df.columns.tolist())
+print("\n========== TASK 3: VISUALIZATIONS ==========")
+import matplotlib.pyplot as plt
+
+# Graph 1: Average Study Hours
+# Graph 1: Average Marks by Attendance Group
+plt.figure(figsize=(8,5))
+df.groupby('Attendance_Group')['Marks'].mean().plot(kind='bar', color='skyblue')
+plt.title('Average Marks by Attendance Group')
+plt.ylabel('Average Marks')
+plt.xticks(rotation=0)
+plt.show()
+# Graph 2: Pass vs Fail % using Marks column
+df['Result'] = df['Marks'].apply(lambda x: 'Pass' if x >= 40 else 'Fail')
+result_counts = df['Result'].value_counts()
+plt.figure(figsize=(6,6))
+plt.pie(result_counts, labels=result_counts.index, autopct='%1.1f%%', colors=['green', 'red'])
+plt.title('Pass vs Fail Percentage')
+plt.show()
+
+
+plt.figure(figsize=(7,5))  # <-- new figure
+plt.scatter(df['StudyHours'], df['Marks'], color='purple')
+plt.title('Study Hours vs Marks')
+plt.xlabel('Study Hours')
+plt.ylabel('Marks')
+plt.savefig('Graph3_Study_vs_Marks.png')
+plt.show()  # <-- show and wait
