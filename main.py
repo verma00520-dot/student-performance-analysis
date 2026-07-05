@@ -58,3 +58,23 @@ avg_marks.plot(kind='bar', color='green')
 plt.title('Average Marks by Attendance')
 plt.ylabel('Average Marks')
 plt.show()
+print("\n========== TASK 2: DATA CLEANING ==========")
+
+# 1. Check missing values
+print("\n1. Missing values in each column:")
+print(df.isnull().sum())
+
+# 2. Check duplicates
+print("\n2. Number of duplicate rows:", df.duplicated().sum())
+
+# 3. Remove duplicates
+df = df.drop_duplicates()
+print("Duplicates removed. New shape:", df.shape)
+
+# 4. Check data types
+print("\n3. Data types:")
+print(df.dtypes)
+
+# 5. Basic statistics
+print("\n4. Basic Statistics:")
+print(df.describe())
