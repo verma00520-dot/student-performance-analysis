@@ -19,5 +19,16 @@ Python, Pandas, Matplotlib
 - Overall performance is good
 
 ## How to Run
+## Graphs
+
+**Graph 1: Attendance vs Average Marks**
+![Attendance Graph](Figure_1average marks by attendance group.png)
+
+**Graph 2: Pass vs Fail Percentage**
+![Pass Fail Graph](Figure_3pass v_s fail.png)
+
+**Graph 3: Study Hours vs Marks**
+![Study vs Marks Graph](Graph3_Study_vs_Marks.png)
 ```bash
+
 python main.py
